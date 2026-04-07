@@ -11,13 +11,20 @@ st.set_page_config(
 )
 
 # Charger les données / Load data
+st.sidebar.header("📁 Data")
+uploaded_file = st.sidebar.file_uploader("Upload your CSV file", type=["csv"])
+
+if uploaded_file is None:
+    st.info("👆 Please upload the Superstore CSV file to get started.")
+    st.stop()
+
 @st.cache_data
-def load_data():
-    df = pd.read_csv("./data/Sample - Superstore.csv", encoding="latin1")
+def load_data(file):
+    df = pd.read_csv(file, encoding="latin1")
     df["Order Date"] = pd.to_datetime(df["Order Date"])
     return df
 
-df = load_data()
+df = load_data(uploaded_file)
 
 # Titre / Title
 st.title("📊 Sales Dashboard")
