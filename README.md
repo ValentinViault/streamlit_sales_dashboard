@@ -67,6 +67,11 @@ Streamlit	Web application framework
 Pandas	Data manipulation and analysis
 Plotly Express	Interactive data visualization
 ---
+
 License
 This project is licensed under the MIT License.  
 Feel free to use, modify, and share it.
+
+---
+
+Try my streamlit app : https://appsalesdashboard-yxeckffqqrj7alcyrbpswh.streamlit.app/
